@@ -117,7 +117,7 @@ public class Baitap1 {
         int newarr[]= new int[n+1];
         for (int i = 0; i < n+1; i++) {
             if (i < pos -1)
-                Ånewarr[i] = a[i];
+                newarr[i] = a[i];
             else if(i==pos-1)
                 newarr[i]=x;
             else newarr[i] = a[i-1];

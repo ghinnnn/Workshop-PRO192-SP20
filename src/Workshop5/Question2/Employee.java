@@ -1,18 +1,27 @@
 package Workshop5.Question2;
 
 import java.util.Date;
+import java.util.Scanner;
 
-public abstract class Employee {
+public class Employee {
+    public static Scanner input = new Scanner(System.in);
     private String employeeID;
     private String fullName;
-    private Double salaryCoefficint;
+    private double salaryCoefficint;
     private Date workStartDate;
     private boolean gender;
     protected double basicSalary = 1490000;
     protected double yearSeniorityAllowance = 100000;
 
+    public Employee(){
+    }
 
-    public Employee(String employeeID, String fullName, Double salaryCoefficint, Date workStartDate, boolean gender) {
+    public Employee(double basicSalary, double yearSeniorityAllowance){
+    this.basicSalary = basicSalary;
+    this.yearSeniorityAllowance = yearSeniorityAllowance;
+    }
+
+    public Employee(String employeeID, String fullName, double salaryCoefficint, Date workStartDate, boolean gender) {
         this.employeeID = employeeID;
         this.fullName = fullName;
         this.salaryCoefficint = salaryCoefficint;
@@ -36,11 +45,11 @@ public abstract class Employee {
         this.fullName = fullName;
     }
 
-    public Double getSalaryCoefficint() {
+    public double getSalaryCoefficint() {
         return salaryCoefficint;
     }
 
-    public void setSalaryCoefficint(Double salaryCoefficint) {
+    public void setSalaryCoefficint(double salaryCoefficint) {
         this.salaryCoefficint = salaryCoefficint;
     }
 
@@ -59,6 +68,8 @@ public abstract class Employee {
     public void setGender(boolean gender) {
         this.gender = gender;
     }
+
+
 
     public void inputData(){
         System.out.println("--------------------------------------------------");
@@ -82,5 +93,7 @@ public abstract class Employee {
         System.out.println("workStartDate: "+workStartDate);
         System.out.println("gender: "+gender);
     }
+
+    public abstract double getSalary();
 
 }
